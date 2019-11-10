@@ -8,9 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
+/**
+ * 采购表的实体类
+ * @author DELL
+ *
+ */
 @Entity
 @Table(name="t_panda_purchase")
 public class Purchase implements Serializable{
+	
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -47,6 +53,8 @@ public class Purchase implements Serializable{
 	private String fixedSupplier;//固定供应商
 	@Column
 	private String requestDeportment;//需求部门
+	@Column
+	private String requestPlanCode;//需求计划编码
 	@Column
 	private String supplyWay;//供应方式
 	@Column
@@ -165,6 +173,12 @@ public class Purchase implements Serializable{
 	}
 	public void setRequestDeportment(String requestDeportment) {
 		this.requestDeportment = requestDeportment;
+	}
+	public String getRequestPlanCode() {
+		return requestPlanCode;
+	}
+	public void setRequestPlanCode(String requestPlanCode) {
+		this.requestPlanCode = requestPlanCode;
 	}
 	public String getSupplyWay() {
 		return supplyWay;
